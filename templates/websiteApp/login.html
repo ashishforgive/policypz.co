@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PP.nz</title>
+    <!-- font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- icons by anrdh -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'websiteApp/assets/css/bootstrap.css' %}"/>
+    <link rel="stylesheet" href="{% static 'websiteApp/assets/css/bootstrap_icons.css' %}" />
+    <link rel="stylesheet" href="{% static 'websiteApp/assets/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'websiteApp/assets/css/anrdh.css' %}" />
+  </head>
+  <body>
+    <div class="policy-website">
+      <!-- Header starts  -->
+     <div class="header-wrapper">
+        <div class="container-fluid header-1 ">
+            <div class="container">
+              <div class="row py-1 justify-content-between align-items-center">
+                <div class="col-auto my-2">
+                  <div class="d-flex align-items-center">
+                    <h2>PP.nz</h2>
+                    <div class="hl"></div>
+                    <p>NZ Election 2023</p>
+                  </div>
+                </div>
+                <div class="col-auto my-2">
+                  <h2 class="spin-off text-decoration-none d-inline"><a href="{% url 'user_login' %}" class="text-white text-decoration-none">Login</a></h2>
+                  <h2 class="spin-off text-decoration-none d-inline my-2"><a href="{% url 'registration' %}" class="text-white text-decoration-none">|</a></h2>
+                  <h2 class="spin-off text-decoration-none d-inline"><a href="{% url 'registration' %}" class="text-white text-decoration-none">Registration</a></h2>
+                </div>
+              </div>
+            </div>
+          </div>
+     </div>
+      <!-- Header ends -->
+      <!-- anrdh internal section -->
+      <div class="container-fluid px-0">
+      
+        <div class="formwrapper p-5 ">
+            <div class="form_text p-5">
+                <div class="text mx-auto">
+                   <h2 class="text-center py-2">Login</h2>
+                   <div class="form">
+                    <div class="form-field w-100">
+                      <label  for="">User Name</label>
+                      <input  class="w-100" type="text">
+                    </div>
+                    <div class="form-field w-100">
+                      <label for="">Password</label>
+                      <input class="w-100" type="password">
+                    </div>
+                    <div class="flex w-100 m-0 justify-content-between align-items-center ">
+                      <div class="form-field">
+                        <input  class="" type="checkbox">
+                        <label  for="">Remember</label>
+                      </div>
+                      <p>Forget ?</p>
+                    </div>
+                    <button class="btn globalBtn px-2 py-2 w-100 font-weight-bold">Login</button>
+                   </div>
+                </div>
+            </div>
+
+        </div>
+       
+
+
+    </div>
+
+      <!-- section ends -->
+      
+    <!-- logos section -->
+  
+
+
+    <div class="footer">
+       <div class="button">
+        <a href="#">© 2023 Policy Limited</a>
+        <button> <i class="fa-solid fa-heart"></i>Donate</button>
+       </div>
+    </div>
+    <!-- footer ends -->
+
+    <!-- Bootstrap Script -->
+    <script src="{% static 'websiteApp/assets/js/bootstrap_js.js' %}"></script>
+  </body>
+</html>

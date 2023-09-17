@@ -1,0 +1,325 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 0;
+}
+.header-wrapper {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 9999999999;
+}
+.header-1 {
+  background-color: #224951;
+}
+.header-1 h2 {
+  font-size: 22px;
+  font-weight: 700;
+  display: inline;
+  margin: 0;
+  color: white;
+}
+.header-1 .col-auto {
+  vertical-align: middle;
+}
+.header-1 .hl {
+  height: 25px;
+  width: 1px;
+  background-color: white;
+  display: inline-block;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 0;
+}
+.header-1 p {
+  color: white;
+  font-size: 24px;
+  display: inline-block;
+}
+.header-1 .spin-off {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  
+}
+.header-2 .menu svg {
+  width: 50px;
+  height: 40px;
+  color: #7e7b7b;
+  cursor: pointer;
+}
+.header-2 .badges svg {
+  color: #224951;
+}
+
+.internal-banner-policy {
+  background: url("../images/interpage-banner-image.png");
+  height: 400px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: flex;
+  align-items: center;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+}
+.banner-policy {
+  background: url("../images/bannerr-new.jpg");
+  /* background: url("../images/bg-polcy.png"); */
+  height: 550px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.banner-heading {
+  font-size: 58px;
+  color: white;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.banner-text {
+  font-size: 30px;
+  color: #ffffff;
+}
+.candidate-img{
+    height: 300px;
+}
+.banner-box {
+  text-align: center;
+}
+.container-shadow {
+  box-shadow: 0 3px 6px rgba(0,0,0,50%);
+}
+.m-negetive{
+    margin-top: -100px;
+    /* background-color: red; */
+    
+}
+.banner-box h3 {
+  font-size: 22px;
+  font-weight: 700;
+}
+.banner-box p {
+  color: #4a4869;
+  font-weight: 400;
+}
+.banner-box .banner-btn-1 {
+  background-image: linear-gradient(135deg,#224951,#3ccfbf 98.69%) !important;
+  border:0px !important;
+  color: white;
+  border-radius: 4px;
+  
+}
+.banner-box .banner-btn-2 {
+  background-image:linear-gradient(135deg,#fc9696,#fe9f43) !important;
+  border:0px !important;
+  color: white;
+  border-radius: 4px;
+
+}
+.banner-box .banner-btn-3 {
+    background: linear-gradient(135deg,#224951,#b9b1f8);
+  border:0px !important;
+  color: white;
+  border-radius: 4px;
+
+}
+.tile-box{
+    border-radius: 8px;
+    background-color: white;
+}
+
+.tile-box .box-1{
+    border-right: 1px solid #dedede;
+}
+.tile-box .box-2{
+    border-right: 1px solid #dedede;
+}
+@media screen and (max-width:767px) {
+    .tile-box .box-1{
+        border-bottom: 1px solid #dedede;
+    }
+    .tile-box .box-2{
+        border-bottom: 1px solid #dedede;
+    }
+}
+.local-area-section{
+    background: rgba(254,159,67,.05);
+}
+
+.crousel-heading{
+    font-size: 34px;
+    font-weight: 700;
+    color: #363454;
+}
+.local-area-text{
+    color: #4A4869;
+    font-size: 18px;
+}
+.banner-btn-2 {
+    background-image:linear-gradient(135deg,#fc9696,#fe9f43) !important;
+    border:0px !important;
+    color: white;
+    border-radius: 4px;
+  
+  }
+.logos-section{
+    background-color: #e0def2;
+}
+  .logos-section h3{
+    font-size: 18px;
+    color: #4A4869;
+  }
+  .logo-images img{
+    width: 180px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .topic-card-row{
+    width: 100%;
+    max-width: 100%;
+    overflow-x: scroll;
+  }
+
+  .topic-card{
+    width: 300px;
+    height:250px ;
+    background-color: white;
+    border-radius: 8px;
+    /* margin: 10px; */
+
+  }
+  .topic-card img{
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    height: 140px;
+    width: 100%;
+  }
+  .topic-card h4{
+    font-size: 16px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .topic-card-container{
+    background-color: #f8f6ff;
+  }
+  .globalBtn{
+    background-color:#224951;
+    padding: 10px 20px;
+    border: 2px solid #224951;
+    color:#fff;
+
+    font-weight:600;
+    &:hover{
+      background-color:white;
+      color:#224951;
+      border: 2px solid #224951;
+
+    }
+  }
+
+  .party-box{
+    min-height: 180px;
+  }
+  .heart-img{
+    position: absolute;
+    bottom: 4%;
+    right: 6%;
+  }
+
+  .internal-tab-content{
+    background: linear-gradient(
+      to top,
+      #224951 0%,
+      #224951 55%,
+      white 55%,
+      white 100%
+    );
+  }
+  .tab-one-content-box{
+    background-color: white ;
+    box-shadow: 0 0.9375rem 1.25rem 0.625rem rgba(10,2,205,.3);
+  }
+  .internal-tabbing-box .nav-link{
+      color: black !important;
+      font-size: 20px !important;
+      font-weight: 700 !important;
+  }
+  .internal-tabbing-box .nav-item .active{
+    background-color: white !important;
+    border: 0 !important;
+    border-radius: 0px !important;
+    border-bottom: 2px solid #224951 !important;
+  }
+
+  @media screen and (max-width:767px) {
+     .banner-policy{
+        height: auto;
+        background-position: 0;
+     }
+     .banner-policy h2{
+      font-size: 24px;
+     }
+     .banner-policy p{
+      font-size: 20px;
+     }
+     .banner-policy .py-4{
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+     }
+     .m-negetive{
+      margin-top: 15px;
+     }
+     .policy{
+      width: 100% !important;
+      text-align: center; 
+      margin-bottom: 10px;
+     }
+     .policy p{
+      width: auto !important;
+     }
+     .policy svg{
+      width: 150px !important;
+     }
+     .flex{
+      flex-wrap: wrap !important;
+     }
+     .election{
+      width: 100% !important;
+     }
+     .internal-banner-policy{
+      height: auto !important;
+      background-position: 0% !important;
+     }
+  }
+  
+  .policy h2{
+    font-size: 48px;
+    font-weight: 700;
+    color: #224951;
+  }
+
+  @media (max-width: 576px){
+.card {
+    flex: 0 0 calc(80% - 20px) !important;
+}}

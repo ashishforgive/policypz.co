@@ -1,0 +1,136 @@
+{% extends 'websiteApp/base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+
+{% block main-content %}
+
+    <!-- banner -->
+    <div class="banner-policy">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 col-8 py-4">
+                    <h2 class="banner-heading">
+                        The complete guide to NZ Election 2023
+                    </h2>
+                    <p class="banner-text">
+                        Get across the policies, candidates and parties to decide who to vote for
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- tile-box -->
+    <div class="container">
+        <div class="container m-negetive">
+            <div class="row container-shadow tile-box justify-content-center">
+                <div class="col-md-4 col-12 px-md-0 px-2 box-1">
+                    <div class="banner-box py-4">
+                        <h3 class="mb-3">Policies</h3>
+                        <p class="mb-3">
+                            Compare the parties’ positions on the key issues this election
+                        </p>
+                        <a href="test.html" class="text-decoration-noen"> <button class="btn globalBtn">Explore More</button></a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12 px-md-0 px-2 box-2">
+                    <div class="banner-box py-4">
+                        <h3 class="mb-3">Candidates</h3>
+                        <p class="mb-3">
+                            See the electorate candidates running in your local are
+                        </p>
+                        <button class="btn globalBtn">Explore More</button>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12y-2 px-md-0 px-2 box-3">
+                    <div class="banner-box py-4">
+                        <h3 class="mb-3">Parties</h3>
+                        <p class="mb-3">
+                            Learn about each political party, its leaders and candidate list
+                        </p>
+                        <button class="btn globalBtn">Explore More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- tile-box -->
+
+    <!-- crousel -->
+    <div class="topic-card-container">
+        <div class="container py-5 mt-5">
+            <h3 class="crousel-heading">Choose a topic to compare</h3>
+            <hr class="m-0 p-0 my-2" />
+            <div class="col-12 mt-2">
+                <div class="carousel d-flex w-100">
+                    <button id="prevBtn" class="btn mx-2 prevBtn bg-transparent"><</button>
+                    <div class="card-container row w-100 px-1 mt-4">
+                        <a href="test.html" class="topic-card px-0 card">
+                            <img src="{% static 'websiteApp/assets/images/topic-card-img.png' %}" class="img-fluid" alt="" />
+                            <h4 class="topic-card-text text-center">Community and inclusion</h4>
+                        </a>
+                        <a href="#" class="topic-card px-0 card">
+                            <img src="{% static 'websiteApp/assets/images/topic-card-img.png' %}" class="img-fluid" alt="" />
+                            <h4 class="topic-card-text text-center">Community and inclusion 1</h4>
+                        </a>
+                        <a href="#" class="topic-card px-0 card">
+                            <img src="{% static 'websiteApp/assets/images/topic-card-img.png' %}" class="img-fluid" alt="" />
+                            <h4 class="topic-card-text text-center">Community and inclusion 2</h4>
+                        </a>
+                        <a href="#" class="topic-card px-0 card">
+                            <img src="{% static 'websiteApp/assets/images/topic-card-img.png' %}" class="img-fluid" alt="" />
+                            <h4 class="topic-card-text text-center">Community and inclusion3</h4>
+                        </a>
+                        <a href="#" class="topic-card px-0 card">
+                            <img src="{% static 'websiteApp/assets/images/topic-card-img.png' %}" class="img-fluid" alt="" />
+                            <h4 class="topic-card-text text-center">Community and inclusion 4</h4>
+                        </a>
+                        <a href="#" class="topic-card px-0 card">
+                            <img src="{% static 'websiteApp/assets/images/topic-card-img.png' %}" class="img-fluid" alt="" />
+                            <h4 class="topic-card-text text-center">Community and inclusion 5</h4>
+                        </a>
+                        <a href="#" class="topic-card px-0 card">
+                            <img src="{% static 'websiteApp/assets/images/topic-card-img.png' %}" class="img-fluid" alt="" />
+                            <h4 class="topic-card-text text-center">Community and inclusion 6</h4>
+                        </a>
+                        <a href="#" class="topic-card px-0 card">
+                            <img src="{% static 'websiteApp/assets/images/topic-card-img.png' %}" class="img-fluid" alt="" />
+                            <h4 class="topic-card-text text-center">Community and inclusion 7</h4>
+                        </a>
+                        <a href="#" class="topic-card px-0 card">
+                            <img src="{% static 'websiteApp/assets/images/topic-card-img.png' %}" class="img-fluid" alt="" />
+                            <h4 class="topic-card-text text-center">Community and inclusion8</h4>
+                        </a>
+                        <a href="#" class="topic-card px-0 card">
+                            <img src="{% static 'websiteApp/assets/images/topic-card-img.png' %}" class="img-fluid" alt="" />
+                            <h4 class="topic-card-text text-center">Community and inclusion 9</h4>
+                        </a>
+                        <a href="#" class="topic-card px-0 card">
+                            <img src="{% static 'websiteApp/assets/images/topic-card-img.png' %}" class="img-fluid" alt="" />
+                            <h4 class="topic-card-text text-center">Community and inclusion 10</h4>
+                        </a>
+                    </div>
+                    <button id="nextBtn" class="btn mx-2 nextBtn bg-transparent">></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Crousel ends -->
+
+    <!-- local area section -->
+    <div class="local-area-section">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-md-6 col-12 my-2 order-md-0 order-1">
+                    <h3 class="crousel-heading">Compare the candidates running in your local area</h3>
+                    <hr class="m-0 p-0 my-2" style="color: orange;" />
+                    <p class="local-area-text">Each part of the country is represented in Parliament by an electorate MP. We've asked every candidate about their priorities for your community and why they deserve your vote.</p>
+                    <a href="test.html" class="text-decoration-none"><button class="btn mt-3 globalBtn">Explore More</button> </a>
+                </div>
+                <div class="col-md-6 col-12 my-2 order-md-1 order-0">
+                    <img src="{% static 'websiteApp/assets/images/candidates.gif' %}" class="img-fluid candidate-img d-block mx-auto" alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- local area section ends -->
+{% endblock main-content %}

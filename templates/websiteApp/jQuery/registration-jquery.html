@@ -1,0 +1,108 @@
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+<script>
+    function partyCreate(){
+        var name = $('#party-form #name').val();
+        var email = $('#party-form #email').val();
+        var password = $('#party-form #password').val();
+        var cpassword = $('#party-form #cpassword').val();
+        var founder = $('#party-form #founder').val();
+        var founded_year = $('#party-form #founded_year').val();
+        var current_mps = $('#party-form #current_mps').val();
+        var no_of_electorate_held = $('#party-form #no_of_electorate_held').val();
+        var polling_average = $('#party-form #polling_average').val();
+        var donations = $('#party-form #donations').val();
+        var contact_details = $('#party-form #contact_details').val();
+        var about_me = $('#party-form #about_me').val();
+        
+        var form_data = new FormData($("#party-form")[0]);
+        
+        if (name == "" || email == "" || password == "" || cpassword == "" || founder == "" || founded_year == "" || current_mps == "" || no_of_electorate_held == "" || polling_average == "" || donations == "" || contact_details == "" || about_me == ""){
+            alert("All fields are required!!");
+            return false;
+        }
+
+        if (password != cpassword){
+            alert("Confirm password doesn't matched!!");
+            return false;
+        }
+
+        $.ajax({
+            url: "/website-api/party-create",
+            type: 'post',
+            csrftoken: '{{ csrf_token }}',
+            async: false,
+            cache: false,
+            contentType: false,
+            processData: false,
+            data: form_data,
+            success: function(response){
+                if (response.status == 200){
+                    document.getElementById("party-form").reset();
+                    alert(response.message);
+                    return true;
+                } else if (response.status == 202){
+                    alert(response.message)
+                    return false;
+                }
+                else{
+                    alert(response.message)
+                    return false;
+                }
+            }
+        });
+    }
+</script>
+
+<script>
+    function condidateCreate(){
+        var name = $('#condidate-form #name').val();
+        var email = $('#condidate-form #email').val();
+        var password = $('#condidate-form #password').val();
+        var cpassword = $('#condidate-form #cpassword').val();
+        var age = $('#condidate-form #age').val();
+        var phone = $('#condidate-form #phone').val();
+        var electorate = $('#condidate-form #electorate').val();
+        var address = $('#party-form #address').val();
+        var contact_details = $('#condidate-form #contact_details').val();
+        var social_media_details = $('#party-form #social_media_details').val();
+        var about_me = $('#condidate-form #about_me').val();
+        
+        var form_data = new FormData($("#condidate-form")[0]);
+        
+        if (name == "" || email == "" || password == "" || cpassword == "" || age == "" || phone == "" || electorate == "" || address == "" || contact_details == "" || social_media_details == "" || about_me == ""){
+            alert("All fields are required!!");
+            return false;
+        }
+
+        if (password != cpassword){
+            alert("Confirm password doesn't matched!!");
+            return false;
+        }
+
+        $.ajax({
+            url: "/website-api/condidate-create",
+            type: 'post',
+            csrftoken: '{{ csrf_token }}',
+            async: false,
+            cache: false,
+            contentType: false,
+            processData: false,
+            data: form_data,
+            success: function(response){
+                if (response.status == 200){
+                    document.getElementById("condidate-form").reset();
+                    alert(response.message);
+                    return true;
+                } else if (response.status == 202){
+                    alert(response.message)
+                    return false;
+                }
+                else{
+                    alert(response.message)
+                    return false;
+                }
+            }
+        });
+    }
+</script>
