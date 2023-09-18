@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+{% extends 'websiteApp/base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %} 
+
+ {% block main-content %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -16,16 +21,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="assets/css/bootstrap.css" />
-    <link rel="stylesheet" href="assets/css/bootstrap_icons.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/anrdh.css">
+     <!-- Bootstrap -->
+     <link rel="stylesheet" href="{% static 'websiteApp/assets/css/bootstrap.css' %}"/>
+     <link rel="stylesheet" href="{% static 'websiteApp/assets/css/bootstrap_icons.css' %}" />
+     <link rel="stylesheet" href="{% static 'websiteApp/assets/css/style.css' %}" />
+     <link rel="stylesheet" href="{% static 'websiteApp/assets/css/anrdh.css' %}" />
   </head>
   <body>
     <div class="policy-website">
       <!-- Header starts  -->
-     <div class="header-wrapper">
+     <!-- <div class="header-wrapper">
         <div class="container-fluid header-1 ">
             <div class="container">
               <div class="row py-1 justify-content-between align-items-center">
@@ -83,10 +88,10 @@
                         />
                       </svg>
                     </div>
-                    <!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Toggle right offcanvas</button> -->
+                     <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Toggle right offcanvas</button> 
 
 
-                    <!-- offcanvas starts -->
+                    
                     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                         <div class="offcanvas-header">
                           <h5 id="offcanvasRightLabel">Offcanvas right</h5>
@@ -105,13 +110,13 @@
                           <p><a href="internal-page-7.html">Terms</a></p>
                         </div>
                       </div>
-                    <!-- offcanvas ends -->
+                     offcanvas ends 
                   </div>
                 </div>
               </div>
             </div>
           </div>
-     </div>
+     </div> -->
       <!-- Header ends -->
       <!-- banner -->
       <div class="internal-banner-policy">
@@ -715,7 +720,7 @@
 
 
     <!-- Footer Anrdh -->
-    <div>
+    <!-- <div>
         <div class="flex">
             <div class="policy">
                 <p>NZ Election 2023</p>
@@ -747,7 +752,7 @@
         <a href="#">© 2023 Policy Limited</a>
         <button> <i class="fa-solid fa-heart"></i>Donate</button>
        </div>
-    </div>
+    </div> -->
     <!-- footer ends -->
 
     <!-- Bootstrap Script -->
@@ -756,3 +761,4 @@
 
   </body>
 </html>
+{% endblock main-content %}

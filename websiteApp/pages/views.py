@@ -30,4 +30,7 @@ def yourFavourites(request):
 def school(request):
     return render(request, 'websiteApp/school.html')
 
+def policy(request):
+    return render(request, 'websiteApp/test.html')
+
 

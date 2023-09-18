@@ -25,3 +25,6 @@ urlpatterns = [
     path('website-api/', include('websiteApp.apis.urls')),
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+admin.site.site_header  =  "NZ Policy Admin Panel"
+admin.site.site_title  =  "NZ Policy Admin Panel site"
+admin.site.index_title  =  "NZ Policy Admin"

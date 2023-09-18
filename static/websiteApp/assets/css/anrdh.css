@@ -267,3 +267,13 @@ button {
 }
 
 /* Add more responsive breakpoints and styles as needed */
+
+a.header-logo {
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    display: inline !important;
+    margin: 0 !important;
+    color: white !important;
+    text-decoration: none;
+    cursor: pointer;
+  }

@@ -16,4 +16,5 @@ urlpatterns = [
     path('browse-all-elections', views.allElections, name='all_elections'),
     path('your-favourites', views.yourFavourites, name='your_favourites'),
     path('school', views.school, name='school'),   
+    path('policy', views.policy, name='policy'),   
 ]
