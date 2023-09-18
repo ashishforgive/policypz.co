@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>PP.nz</title>
+        <title>NZPolicy</title>
         <!-- font family -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,7 +37,7 @@
                                 <div class="d-flex align-items-center">
                                     <!-- <h2>NZ Policy</h2>
                                     <div class="hl"></div> -->
-                                    <p>NZ Policy</p>
+                                    <p>NZPolicy.co.nz</p>
                                 </div>
                             </div>
                             <div class="col-auto my-2">
@@ -56,7 +56,7 @@
                             <div class="text mx-auto">
                                 <ul class="nav nav-tabs">
                                     <li class="active"><a data-toggle="tab" href="#home"><b>Registration As Party</b></a></li>
-                                    <li><a data-toggle="tab" href="#menu1"><b>Registration As Condidate</b></a></li>
+                                    <li><a data-toggle="tab" href="#menu1"><b>Registration As Candidate</b></a></li>
                                 </ul>
 
                                 <div class="tab-content">
@@ -133,21 +133,21 @@
                                                 {% csrf_token %}
                                                 <div class="form d-flex flex-wrap">
                                                     <div class="form-field w-50 px-1 px-1">
-                                                        <label for="">Condidate Name <span style="color: red;">*</span></label>
+                                                        <label for="">Candidate Name <span style="color: red;">*</span></label>
                                                         <input class="w-100" type="text" id="name" name="name"/>
                                                     </div>
                                                     <div class="form-field w-50 px-1">
                                                         <label for="">Email <span style="color: red;">*</span></label>
                                                         <input class="w-100" type="text" id="email" name="email"/>
                                                     </div>
-                                                    <div class="form-field w-50 px-1">
+                                                    <!-- <div class="form-field w-50 px-1">
                                                         <label for="">Password <span style="color: red;">*</span></label>
                                                         <input class="w-100" type="password" id="password" name="password" />
                                                     </div>
                                                     <div class="form-field w-50 px-1">
                                                         <label for="">Confirm Password <span style="color: red;">*</span></label>
                                                         <input class="w-100" type="password" id="cpassword"/>
-                                                    </div>
+                                                    </div> -->
                                                     <div class="form-field w-50 px-1">
                                                         <label for="">Age <span style="color: red;">*</span></label>
                                                         <input class="w-100" type="number" id="age" name="age"/>
@@ -162,7 +162,8 @@
                                                     </div>
                                                     <div class="form-field w-50 px-1">
                                                         <label for="">Address <span style="color: red;">*</span></label>
-                                                        <input class="w-100" type="text" id="address" name="address"/>
+                                                        <!-- <input class="w-100" type="textarea" id="address" name="address"/> -->
+                                                        <textarea class="w-100" id="address" name="address"></textarea>
                                                     </div>
                                                     <div class="form-field w-100">
                                                         <label for="">Contact Details <span style="color: red;">*</span></label>
@@ -176,6 +177,38 @@
                                                         <label for="">About Me <span style="color: red;">*</span></label>
                                                         <textarea class="w-100" id="about_me" name="about_me"></textarea>
                                                     </div>
+                                                    <div class="form-field w-100">
+                                                        <label for="">Any unique strengths or expertise you believe you have which people
+                                                            should know( Optional )</label>
+                                                        <textarea class="w-100" id="unique_strg" name="unique_strg"></textarea>
+                                                    </div>
+
+                                                    <div class="form-field w-100">
+                                                        <label for="">Why are you running for election ?</label>
+                                                        <textarea class="w-100" id="about_me" name="why_running"></textarea>
+                                                    </div>
+
+                                                    <div class="form-field w-100">
+                                                        <label for="">Issues my local constituency is facing and solution I can provide</label>
+                                                        <textarea class="w-100" id="about_me" name="issues_facing"></textarea>
+                                                    </div>
+                                                    <div class="form-field w-100">
+                                                        <label for="">Why should local people vote me?</label>
+                                                        <textarea class="w-100" id="about_me" name="why_vote"></textarea>
+                                                    </div>
+
+                                                    <div class="form-field w-100">
+                                                        <label for="">My priorities?</label>
+                                                        <textarea class="w-100" id="about_me" name="cand_priority"></textarea>
+                                                    </div>
+
+                                                    <div class="form-field w-100">
+                                                        <label for="">Press release- link to your press release</label>
+                                                        <textarea class="w-100" id="about_me" name="cand_presslink"></textarea>
+                                                    </div>
+
+                                                    
+                                                    
                                                     
                                                     <!-- <div class="flex w-100 m-0 justify-content-between align-items-center">
                                                         <div class="form-field">
