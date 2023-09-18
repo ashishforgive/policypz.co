@@ -4,28 +4,42 @@
     function partyCreate(){
         var name = $('#party-form #name').val();
         var email = $('#party-form #email').val();
-        var password = $('#party-form #password').val();
-        var cpassword = $('#party-form #cpassword').val();
-        var founder = $('#party-form #founder').val();
+        // var password = $('#party-form #password').val();
+        // var cpassword = $('#party-form #cpassword').val();
+        var founder_1 = $('#party-form #founder_1').val();
         var founded_year = $('#party-form #founded_year').val();
         var current_mps = $('#party-form #current_mps').val();
         var no_of_electorate_held = $('#party-form #no_of_electorate_held').val();
         var polling_average = $('#party-form #polling_average').val();
         var donations = $('#party-form #donations').val();
-        var contact_details = $('#party-form #contact_details').val();
-        var about_me = $('#party-form #about_me').val();
+        var party_contact_details = $('#party-form #party_contact_details').val();
+        var about_party = $('#party-form #about_party').val();
+
+        var party_q_performance = $('#party-form #party_q_performance').val();
+        var party_q_productivity = $('#party-form #party_q_productivity').val();
+        var party_q_religious = $('#party-form #party_q_religious').val();
+        var party_q_terrorism = $('#party-form #party_q_terrorism').val();
+        var party_q_internation_relation = $('#party-form #party_q_internation_relation').val();
+        var party_q_introduce = $('#party-form #party_q_introduce').val();
+        var party_address = $('#party-form #party_address').val();
+        var founder_2 = $('#party-form #founder_2').val();
+        var founder_3 = $('#party-form #founder_3').val();
+        var founder_4 = $('#party-form #founder_4').val();
+        var time_in_gov = $('#party-form #time_in_gov').val();
+        // var poling_avg = $('#party-form #poling_avg').val();
+        var party_logo = $('#party-form #party_logo')[0].files[0];
         
         var form_data = new FormData($("#party-form")[0]);
         
-        if (name == "" || email == "" || password == "" || cpassword == "" || founder == "" || founded_year == "" || current_mps == "" || no_of_electorate_held == "" || polling_average == "" || donations == "" || contact_details == "" || about_me == ""){
+        if (name == "" || email == "" || founder_1 == "" || founded_year == "" || current_mps == "" || no_of_electorate_held == "" || polling_average == "" || donations == "" || party_contact_details == "" || about_party == ""){
             alert("All fields are required!!");
             return false;
         }
 
-        if (password != cpassword){
-            alert("Confirm password doesn't matched!!");
-            return false;
-        }
+        // if (password != cpassword){
+        //     alert("Confirm password doesn't matched!!");
+        //     return false;
+        // }
 
         $.ajax({
             url: "/website-api/party-create",
@@ -58,8 +72,8 @@
     function condidateCreate(){
         var name = $('#condidate-form #name').val();
         var email = $('#condidate-form #email').val();
-        var password = $('#condidate-form #password').val();
-        var cpassword = $('#condidate-form #cpassword').val();
+        // var password = $('#condidate-form #password').val();
+        // var cpassword = $('#condidate-form #cpassword').val();
         var age = $('#condidate-form #age').val();
         var phone = $('#condidate-form #phone').val();
         var electorate = $('#condidate-form #electorate').val();
@@ -68,17 +82,25 @@
         var social_media_details = $('#party-form #social_media_details').val();
         var about_me = $('#condidate-form #about_me').val();
         
+        var unique_strg = $('#condidate-form #unique_strg').val();
+        var why_running = $('#condidate-form #why_running').val();
+        var issues_facing = $('#condidate-form #issues_facing').val();
+        var why_vote = $('#condidate-form #why_vote').val();
+        var cand_priority = $('#condidate-form #cand_priority').val();
+        var cand_presslink = $('#condidate-form #cand_presslink').val();
+        var cand_img = $('#condidate-form #cand_img')[0].files[0];
+        
         var form_data = new FormData($("#condidate-form")[0]);
         
-        if (name == "" || email == "" || password == "" || cpassword == "" || age == "" || phone == "" || electorate == "" || address == "" || contact_details == "" || social_media_details == "" || about_me == ""){
+        if (name == "" || email == "" || age == "" || phone == "" || electorate == "" || address == "" || contact_details == "" || social_media_details == "" || about_me == ""){
             alert("All fields are required!!");
             return false;
         }
 
-        if (password != cpassword){
-            alert("Confirm password doesn't matched!!");
-            return false;
-        }
+        // if (password != cpassword){
+        //     alert("Confirm password doesn't matched!!");
+        //     return false;
+        // }
 
         $.ajax({
             url: "/website-api/condidate-create",

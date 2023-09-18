@@ -1,252 +1,724 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>NZPolicy</title>
-        <!-- font family -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NZPolicy</title>
+    <!-- font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-        <!-- icons by anrdh -->
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-            integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        />
+    <!-- icons by anrdh -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-        <!-- Bootstrap -->
-        <link rel="stylesheet" href="{% static 'websiteApp/assets/css/bootstrap.css' %}" />
-        <link rel="stylesheet" href="{% static 'websiteApp/assets/css/bootstrap_icons.css' %}" />
-        <link rel="stylesheet" href="{% static 'websiteApp/assets/css/style.css' %}" />
-        <link rel="stylesheet" href="{% static 'websiteApp/assets/css/anrdh.css' %}" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
-    </head>
-    <body>
-        <div class="policy-website">
-            <!-- Header starts  -->
-            <div class="header-wrapper">
-                <div class="container-fluid header-1">
-                    <div class="container">
-                        <div class="row py-1 justify-content-between align-items-center">
-                            <div class="col-auto my-2">
-                                <div class="d-flex align-items-center">
-                                    <!-- <h2>NZ Policy</h2>
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="{% static 'websiteApp/assets/css/bootstrap.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'websiteApp/assets/css/bootstrap_icons.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'websiteApp/assets/css/style.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'websiteApp/assets/css/anrdh.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="policy-website">
+      <!-- Header starts  -->
+      <div class="header-wrapper">
+        <div class="container-fluid header-1">
+          <div class="container">
+            <div class="row py-1 justify-content-between align-items-center">
+              <div class="col-auto my-2">
+                <div class="d-flex align-items-center">
+                  <!-- <h2>NZ Policy</h2>
                                     <div class="hl"></div> -->
-                                    <p>NZPolicy.co.nz</p>
-                                </div>
-                            </div>
-                            <div class="col-auto my-2">
-                                <h2 class="spin-off text-decoration-none d-inline"><a href="{% url 'user_login' %}" class="text-white text-decoration-none">Login</a></h2>
-                                <h2 class="spin-off text-decoration-none d-inline my-2"><a href="{% url 'registration' %}" class="text-white text-decoration-none">|</a></h2>
-                                <h2 class="spin-off text-decoration-none d-inline"><a href="{% url 'registration' %}" class="text-white text-decoration-none">Registration</a></h2>
-                            </div>
-                        </div>
-                    </div>
+                  <p>NZPolicy.co.nz</p>
                 </div>
-                <!-- Header ends -->
-                <!-- anrdh internal section -->
-                <div class="container-fluid px-0">
-                    <div class="formwrapper p-5">
-                        <div class="form_text p-5">
-                            <div class="text mx-auto">
-                                <ul class="nav nav-tabs">
-                                    <li class="active"><a data-toggle="tab" href="#home"><b>Registration As Party</b></a></li>
-                                    <li><a data-toggle="tab" href="#menu1"><b>Registration As Candidate</b></a></li>
-                                </ul>
-
-                                <div class="tab-content">
-                                    <div id="home" class="tab-pane fade in active">
-                                        <div class="text mx-auto">
-                                            <p style="font-size: 14px;"><span style="color: red;">*</span> All fields are required!!</p>
-                                            <form method="post" id="party-form">
-                                                {% csrf_token %}
-                                                <div class="form d-flex flex-wrap">
-                                                    <div class="form-field w-50 px-1 px-1">
-                                                        <label for="">Party Name <span style="color: red;">*</span></label>
-                                                        <input class="w-100" type="text" id="name" name="party_name"/>
-                                                    </div>
-                                                    <div class="form-field w-50 px-1">
-                                                        <label for="">Email <span style="color: red;">*</span></label>
-                                                        <input class="w-100" type="text" id="email" name="email"/>
-                                                    </div>
-                                                    <div class="form-field w-50 px-1">
-                                                        <label for="">Password <span style="color: red;">*</span></label>
-                                                        <input class="w-100" type="password" id="password" name="password" />
-                                                    </div>
-                                                    <div class="form-field w-50 px-1">
-                                                        <label for="">Confirm Password <span style="color: red;">*</span></label>
-                                                        <input class="w-100" type="password" id="cpassword"/>
-                                                    </div>
-                                                    <div class="form-field w-50 px-1">
-                                                        <label for="">Founder <span style="color: red;">*</span></label>
-                                                        <input class="w-100" type="text" id="founder" name="founder"/>
-                                                    </div>
-                                                    <div class="form-field w-50 px-1">
-                                                        <label for="">Founder Year <span style="color: red;">*</span></label>
-                                                        <input class="w-100" type="text" id="founded_year" name="founded_year"/>
-                                                    </div>
-                                                    <div class="form-field w-50 px-1">
-                                                        <label for="">Current MPs <span style="color: red;">*</span></label>
-                                                        <input class="w-100" type="text" id="current_mps" name="current_mps"/>
-                                                    </div>
-                                                    <div class="form-field w-50 px-1">
-                                                        <label for="">Polling Average <span style="color: red;">*</span></label>
-                                                        <input class="w-100" type="text" id="polling_average" name="polling_average"/>
-                                                    </div>
-                                                    <div class="form-field w-50 px-1">
-                                                        <label for="">Donations <span style="color: red;">*</span></label>
-                                                        <input class="w-100" type="text" id="donations" name="donations"/>
-                                                    </div>
-                                                    <div class="form-field w-50 px-1">
-                                                        <label for="">No. of Electorate Held <span style="color: red;">*</span></label>
-                                                        <input class="w-100" type="text" id="no_of_electorate_held" name="no_of_electorate_held"/>
-                                                    </div>
-                                                    <div class="form-field w-100">
-                                                        <label for="">Contact Details <span style="color: red;">*</span></label>
-                                                        <textarea class="w-100" id="contact_details" name="contact_details"></textarea>
-                                                    </div>
-                                                    <div class="form-field w-100">
-                                                        <label for="">About Me <span style="color: red;">*</span></label>
-                                                        <textarea class="w-100" id="about_me" name="about_me"></textarea>
-                                                    </div>
-                                                    <!-- <div class="flex w-100 m-0 justify-content-between align-items-center">
-                                                        <div class="form-field">
-                                                            <input class="" type="checkbox" />
-                                                            <label for="">Remember</label>
-                                                        </div>
-                                                        <p>Back to Login</p>
-                                                    </div> -->
-                                                    <button type="button" class="btn globalBtn px-2 py-2 w-100 font-weight-bold" onclick="partyCreate();">Registration</button>
-                                                </div>
-                                            </form>
-                                        </div>  
-                                    </div>
-                                    <div id="menu1" class="tab-pane fade">
-                                        <div class="text mx-auto">
-                                            <p style="font-size: 14px;"><span style="color: red;">*</span> All fields are required!!</p>
-                                            <form method="post" id="condidate-form">
-                                                {% csrf_token %}
-                                                <div class="form d-flex flex-wrap">
-                                                    <div class="form-field w-50 px-1 px-1">
-                                                        <label for="">Candidate Name <span style="color: red;">*</span></label>
-                                                        <input class="w-100" type="text" id="name" name="name"/>
-                                                    </div>
-                                                    <div class="form-field w-50 px-1">
-                                                        <label for="">Email <span style="color: red;">*</span></label>
-                                                        <input class="w-100" type="text" id="email" name="email"/>
-                                                    </div>
-                                                    <!-- <div class="form-field w-50 px-1">
-                                                        <label for="">Password <span style="color: red;">*</span></label>
-                                                        <input class="w-100" type="password" id="password" name="password" />
-                                                    </div>
-                                                    <div class="form-field w-50 px-1">
-                                                        <label for="">Confirm Password <span style="color: red;">*</span></label>
-                                                        <input class="w-100" type="password" id="cpassword"/>
-                                                    </div> -->
-                                                    <div class="form-field w-50 px-1">
-                                                        <label for="">Age <span style="color: red;">*</span></label>
-                                                        <input class="w-100" type="number" id="age" name="age"/>
-                                                    </div>
-                                                    <div class="form-field w-50 px-1">
-                                                        <label for="">Phone <span style="color: red;">*</span></label>
-                                                        <input class="w-100" type="number" id="phone" name="phone"/>
-                                                    </div>
-                                                    <div class="form-field w-50 px-1">
-                                                        <label for="">Electorate <span style="color: red;">*</span></label>
-                                                        <input class="w-100" type="text" id="electorate" name="electorate"/>
-                                                    </div>
-                                                    <div class="form-field w-50 px-1">
-                                                        <label for="">Address <span style="color: red;">*</span></label>
-                                                        <!-- <input class="w-100" type="textarea" id="address" name="address"/> -->
-                                                        <textarea class="w-100" id="address" name="address"></textarea>
-                                                    </div>
-                                                    <div class="form-field w-100">
-                                                        <label for="">Contact Details <span style="color: red;">*</span></label>
-                                                        <textarea class="w-100" id="contact_details" name="contact_details"></textarea>
-                                                    </div>
-                                                    <div class="form-field w-100">
-                                                        <label for="">Social Media Details <span style="color: red;">*</span></label>
-                                                        <textarea class="w-100" id="social_media_contact" name="social_media_contact"></textarea>
-                                                    </div>
-                                                    <div class="form-field w-100">
-                                                        <label for="">About Me <span style="color: red;">*</span></label>
-                                                        <textarea class="w-100" id="about_me" name="about_me"></textarea>
-                                                    </div>
-                                                    <div class="form-field w-100">
-                                                        <label for="">Any unique strengths or expertise you believe you have which people
-                                                            should know( Optional )</label>
-                                                        <textarea class="w-100" id="unique_strg" name="unique_strg"></textarea>
-                                                    </div>
-
-                                                    <div class="form-field w-100">
-                                                        <label for="">Why are you running for election ?</label>
-                                                        <textarea class="w-100" id="about_me" name="why_running"></textarea>
-                                                    </div>
-
-                                                    <div class="form-field w-100">
-                                                        <label for="">Issues my local constituency is facing and solution I can provide</label>
-                                                        <textarea class="w-100" id="about_me" name="issues_facing"></textarea>
-                                                    </div>
-                                                    <div class="form-field w-100">
-                                                        <label for="">Why should local people vote me?</label>
-                                                        <textarea class="w-100" id="about_me" name="why_vote"></textarea>
-                                                    </div>
-
-                                                    <div class="form-field w-100">
-                                                        <label for="">My priorities?</label>
-                                                        <textarea class="w-100" id="about_me" name="cand_priority"></textarea>
-                                                    </div>
-
-                                                    <div class="form-field w-100">
-                                                        <label for="">Press release- link to your press release</label>
-                                                        <textarea class="w-100" id="about_me" name="cand_presslink"></textarea>
-                                                    </div>
-
-                                                    
-                                                    
-                                                    
-                                                    <!-- <div class="flex w-100 m-0 justify-content-between align-items-center">
-                                                        <div class="form-field">
-                                                            <input class="" type="checkbox" />
-                                                            <label for="">Remember</label>
-                                                        </div>
-                                                        <p>Back to Login</p>
-                                                    </div> -->
-                                                    <button type="button" class="btn globalBtn px-2 py-2 w-100 font-weight-bold" onclick="condidateCreate();">Registration</button>
-                                                </div>
-                                            </form>
-                                        </div>  
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- section ends -->
-
-                <!-- logos section -->
-                <div class="footer">
-                    <div class="button">
-                        <a href="#">© 2023 NZ Policy</a>
-                        <button><i class="fa-solid fa-heart"></i>Donate</button>
-                    </div>
-                </div>
-                <!-- footer ends -->
-
-                <!-- Bootstrap Script -->
-                <script src="{% static 'websiteApp/assets/js/bootstrap_js.js' %}"></script>
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-                
+              </div>
+              <div class="col-auto my-2">
+                <h2 class="spin-off text-decoration-none d-inline">
+                  <a
+                    href="{% url 'user_login' %}"
+                    class="text-white text-decoration-none"
+                    >Login</a
+                  >
+                </h2>
+                <h2 class="spin-off text-decoration-none d-inline my-2">
+                  <a
+                    href="{% url 'registration' %}"
+                    class="text-white text-decoration-none"
+                    >|</a
+                  >
+                </h2>
+                <h2 class="spin-off text-decoration-none d-inline">
+                  <a
+                    href="{% url 'registration' %}"
+                    class="text-white text-decoration-none"
+                    >Registration</a
+                  >
+                </h2>
+              </div>
             </div>
+          </div>
         </div>
-    </body>
+        <!-- Header ends -->
+        <!-- anrdh internal section -->
+        <div class="container-fluid px-0">
+          <div class="formwrapper p-5">
+            <div class="form_text p-5">
+              <div class="text mx-auto">
+                <ul class="nav nav-tabs">
+                  <li class="active">
+                    <a data-toggle="tab" href="#home"
+                      ><b>Registration As Party</b></a
+                    >
+                  </li>
+                  <li>
+                    <a data-toggle="tab" href="#menu1"
+                      ><b>Registration As Candidate</b></a
+                    >
+                  </li>
+                </ul>
+
+                <div class="tab-content">
+                  <div id="home" class="tab-pane fade in active">
+                    <div class="text mx-auto">
+                      <!-- <ul id="progressbar">
+                            <li class="active" id="account"><strong>Account</strong></li>
+                            <li id="personal"><strong>Personal</strong></li>
+                            <li id="payment"><strong>Payment</strong></li>
+                            <li id="confirm"><strong>Finish</strong></li>
+                        </ul> -->
+                      <p style="font-size: 14px">
+                        <span style="color: red">*</span> All fields are
+                        required!!
+                      </p>
+                      <form method="post" id="party-form">
+                        {% csrf_token %}
+                        <div class="form d-flex flex-wrap">
+                          <div class="form-field w-50 px-1 px-1">
+                            <label for=""
+                              >Party Name
+                              <span style="color: red">*</span></label
+                            >
+                            <input
+                              class="w-100"
+                              type="text"
+                              id="name"
+                              name="party_name"
+                            />
+                          </div>
+                          <div class="form-field w-50 px-1">
+                            <label for=""
+                              >Party Email
+                              <span style="color: red">*</span></label
+                            >
+                            <input
+                              class="w-100"
+                              type="text"
+                              id="email"
+                              name="email"
+                            />
+                          </div>
+                          <!-- <div class="form-field w-50 px-1">
+                                                        <label for="">Password <span style="color: red;">*</span></label>
+                                                        <input class="w-100" type="password" id="password" name="password" />
+                                                    </div>
+                                                    <div class="form-field w-50 px-1">
+                                                        <label for="">Confirm Password <span style="color: red;">*</span></label>
+                                                        <input class="w-100" type="password" id="cpassword"/>
+                                                    </div> -->
+                          <div class="form-field w-50 px-1">
+                            <label for=""
+                              >Year Founded
+                              <span style="color: red">*</span></label
+                            >
+                            <input
+                              class="w-100"
+                              type="text"
+                              id="founded_year"
+                              name="founded_year"
+                            />
+                          </div>
+                          <div class="form-field w-50 px-1">
+                            <label for=""
+                              >Current MPs
+                              <span style="color: red">*</span></label
+                            >
+                            <input
+                              class="w-100"
+                              type="text"
+                              id="current_mps"
+                              name="current_mps"
+                            />
+                          </div>
+                          <div class="form-field w-50 px-1">
+                            <label for=""
+                              >2023 polling average
+                              <span style="color: red">*</span></label
+                            >
+                            <input
+                              class="w-100"
+                              type="text"
+                              id="polling_average"
+                              name="polling_average"
+                            />
+                          </div>
+                          <div class="form-field w-50 px-1">
+                            <label for=""
+                              >Donations 2023
+                              <span style="color: red">*</span></label
+                            >
+                            <input
+                              class="w-100"
+                              type="text"
+                              id="donations"
+                              name="donations"
+                            />
+                          </div>
+                          <div class="form-field w-50 px-1">
+                            <label for=""
+                              >No. of Electorate Held
+                              <span style="color: red">*</span></label
+                            >
+                            <input
+                              class="w-100"
+                              type="text"
+                              id="no_of_electorate_held"
+                              name="no_of_electorate_held"
+                            />
+                          </div>
+
+                          <div class="form-field w-50 px-1">
+                            <label for=""
+                              >Party Office address
+                              <span style="color: red">*</span></label
+                            >
+                            <textarea
+                              class="w-100"
+                              id="party_address"
+                              name="party_address"
+                            ></textarea>
+                          </div>
+                          <!-- <div class="form-field w-100 px-1"> -->
+
+                          <div class="form-field w-50 px-1">
+                            <label for=""
+                              >Founder 1
+                              <span style="color: red">*</span></label
+                            >
+                            <input
+                              class="w-100"
+                              type="text"
+                              id="founder_1"
+                              name="founder_1"
+                            />
+                          </div>
+                          <div class="form-field w-50 px-1">
+                            <label for="">Founder 2 </label>
+                            <input
+                              class="w-100"
+                              type="text"
+                              id="founder_2"
+                              name="founder_2"
+                            />
+                          </div>
+                          <div class="form-field w-50 px-1">
+                            <label for="">Founder 3 </label>
+                            <input
+                              class="w-100"
+                              type="text"
+                              id="founder_3"
+                              name="founder_3"
+                            />
+                          </div>
+                          <div class="form-field w-50 px-1">
+                            <label for="">Founder 4 </label>
+                            <input
+                              class="w-100"
+                              type="text"
+                              id="founder_4"
+                              name="founder_4"
+                            />
+                          </div>
+
+                          <!-- </div> -->
+                          <div class="form-field w-50 px-1">
+                            <label for=""
+                              >Times in govt
+                              <span style="color: red">*</span></label
+                            >
+                            <input
+                              class="w-100"
+                              type="text"
+                              id="time_in_gov"
+                              name="time_in_gov"
+                            />
+                          </div>
+
+                          <!-- <div class="form-field w-50 px-1">
+                            <label for=""
+                              >2023 polling average
+                              <span style="color: red">*</span></label
+                            >
+                            <input
+                              class="w-100"
+                              type="text"
+                              id="poling_avg"
+                              name="poling_avg"
+                            />
+                          </div> -->
+
+                          <!-- <div class="form-field w-50 px-1">
+                            <label for=""
+                              >Donations 2023
+                              <span style="color: red">*</span></label
+                            >
+                            <input
+                              class="w-100"
+                              type="text"
+                              id="2023_donation"
+                              name="2023_donation"
+                            />
+                          </div> -->
+
+                          <div class="form-field w-50 px-1">
+                            <label for=""
+                              >Upload Logo file
+                              <span style="color: red">*</span></label
+                            >
+                            <input
+                              class="w-100"
+                              id="party_logo"
+                              name="party_logo"
+                              type="file"
+                              oninput="pic.src=window.URL.createObjectURL(this.files[0])"
+                            />
+                            <br />
+                            <img id="pic" />
+                            <!-- <input
+                              class="w-100"
+                              type="text"
+                              id="2023_donation"
+                              name="2023_donation"
+                            /> -->
+                          </div>
+
+                          <div class="form-field w-100">
+                            <label for=""
+                              >Party contact details
+                              <span style="color: red">*</span></label
+                            >
+                            <textarea
+                              class="w-100"
+                              id="party_contact_details"
+                              name="party_contact_details"
+                            ></textarea>
+                          </div>
+                          <div class="form-field w-100">
+                            <label for=""
+                              >About the party
+                              <span style="color: red">*</span></label
+                            >
+                            <textarea
+                              class="w-100"
+                              id="about_party"
+                              name="about_party"
+                            ></textarea>
+                          </div>
+
+                          <div class="form-field w-100">
+                            <label for=""
+                              >What bill will your party introduce if you come
+                              in power? <span style="color: red">*</span></label
+                            >
+                            <textarea
+                              class="w-100"
+                              id="party_q_introduce"
+                              name="party_q_introduce"
+                            ></textarea>
+                          </div>
+
+                          <div class="form-field w-100">
+                            <label for=""
+                              >International relationship?
+                              <span style="color: red">*</span><br />
+                              <span
+                                >Which country would you collaborate? Your views
+                                on present free trade agreements and are the
+                                present free trade agreements is helping New
+                                Zealand or big countries who have signed
+                                this?</span
+                              ></label
+                            >
+                            <textarea
+                              class="w-100"
+                              id="party_q_internation_relation"
+                              name="party_q_internation_relation"
+                            ></textarea>
+                          </div>
+
+                          <div class="form-field w-100">
+                            <label for=""
+                              >Terrorism? <span style="color: red">*</span
+                              ><br />
+                              <span
+                                >How is NZ preparing for terrorism attack. And
+                                should a terrorist stripped off his
+                                citizenship?</span
+                              ></label
+                            >
+                            <textarea
+                              class="w-100"
+                              id="party_q_terrorism"
+                              name="party_q_terrorism"
+                            ></textarea>
+                          </div>
+
+                          <div class="form-field w-100">
+                            <label for=""
+                              >Promotion of culture and religious knowledge?
+                              <span style="color: red">*</span><br />
+                              <span
+                                >Govt. has funds to educate and promte eligion
+                                and culture but is it being monitored that it
+                                has been used for correct purpose and also
+                                presently funds are distributed based on no. of
+                                organisation rather equal distribution between
+                                different religion and culture.</span
+                              ></label
+                            >
+                            <textarea
+                              class="w-100"
+                              id="party_q_religious"
+                              name="party_q_religious"
+                            ></textarea>
+                          </div>
+
+                          <div class="form-field w-100">
+                            <label for=""
+                              >NZ productivity? <span style="color: red">*</span
+                              ><br />
+                              <span
+                                >NZ productivity levels fall well behind the
+                                most productive nations in the Organisation for
+                                Economic Cooperation and Development (OECD),
+                                when measured in Gross Domestic Product (GDP)
+                                per hour worked. What are your thoughts and how
+                                will you improve it?</span
+                              ></label
+                            >
+                            <textarea
+                              class="w-100"
+                              id="party_q_productivity"
+                              name="party_q_productivity"
+                            ></textarea>
+                          </div>
+
+                          <div class="form-field w-100">
+                            <label for=""
+                              >Performance and job loss?
+                              <span style="color: red">*</span><br />
+                              <span
+                                >Public sector top management and performance –
+                                it is often seen that big organisation starts
+                                making loss due to wrong strategy,competion or
+                                even during Covid, govt. pumps more money,lower
+                                staff is removed but top management and board
+                                keep the jobs get bonuses and in most cases CEO
+                                walks with million in bonus even when the
+                                organisation goes in loss. Can any Govt. justify
+                                this and is this fair for the other staff who is
+                                laid off because of top management
+                                failure.</span
+                              ></label
+                            >
+                            <textarea
+                              class="w-100"
+                              id="party_q_performance"
+                              name="party_q_performance"
+                            ></textarea>
+                          </div>
+                          <!-- <div class="flex w-100 m-0 justify-content-between align-items-center">
+                                                        <div class="form-field">
+                                                            <input class="" type="checkbox" />
+                                                            <label for="">Remember</label>
+                                                        </div>
+                                                        <p>Back to Login</p>
+                                                    </div> -->
+                          <button
+                            type="button"
+                            class="btn globalBtn px-2 py-2 w-100 font-weight-bold"
+                            onclick="partyCreate();"
+                          >
+                            Registration
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <div id="menu1" class="tab-pane fade">
+                    <div class="text mx-auto">
+                      <p style="font-size: 14px">
+                        <span style="color: red">*</span> All fields are
+                        required!!
+                      </p>
+                      <form method="post" id="condidate-form">
+                        {% csrf_token %}
+                        <div class="form d-flex flex-wrap">
+                          <div class="form-field w-50 px-1 px-1">
+                            <label for=""
+                              >Candidate Name
+                              <span style="color: red">*</span></label
+                            >
+                            <input
+                              class="w-100"
+                              type="text"
+                              id="name"
+                              name="name"
+                            />
+                          </div>
+                          <div class="form-field w-50 px-1">
+                            <label for=""
+                              >Email <span style="color: red">*</span></label
+                            >
+                            <input
+                              class="w-100"
+                              type="text"
+                              id="email"
+                              name="email"
+                            />
+                          </div>
+                          <!-- <div class="form-field w-50 px-1">
+                                                        <label for="">Password <span style="color: red;">*</span></label>
+                                                        <input class="w-100" type="password" id="password" name="password" />
+                                                    </div>
+                                                    <div class="form-field w-50 px-1">
+                                                        <label for="">Confirm Password <span style="color: red;">*</span></label>
+                                                        <input class="w-100" type="password" id="cpassword"/>
+                                                    </div> -->
+                          <div class="form-field w-50 px-1">
+                            <label for=""
+                              >Age <span style="color: red">*</span></label
+                            >
+                            <input
+                              class="w-100"
+                              type="number"
+                              id="age"
+                              name="age"
+                            />
+                          </div>
+                          <div class="form-field w-50 px-1">
+                            <label for=""
+                              >Phone <span style="color: red">*</span></label
+                            >
+                            <input
+                              class="w-100"
+                              type="number"
+                              id="phone"
+                              name="phone"
+                            />
+                          </div>
+                          <div class="form-field w-50 px-1">
+                            <label for=""
+                              >Electorate
+                              <span style="color: red">*</span></label
+                            >
+                            <input
+                              class="w-100"
+                              type="text"
+                              id="electorate"
+                              name="electorate"
+                            />
+                          </div>
+                          <div class="form-field w-50 px-1">
+                            <label for=""
+                              >Address <span style="color: red">*</span></label
+                            >
+                            <!-- <input class="w-100" type="textarea" id="address" name="address"/> -->
+                            <textarea
+                              class="w-100"
+                              id="address"
+                              name="address"
+                            ></textarea>
+                          </div>
+
+                          <div class="form-field w-50 px-1">
+                            <label for=""
+                              >Upload photo
+                              <span style="color: red">*</span></label
+                            >
+                            <input
+                              class="w-100"
+                              id="cand_img"
+                              name="cand_img"
+                              type="file"
+                              oninput="cad_img.src=window.URL.createObjectURL(this.files[0])"
+                            />
+                            <br />
+                            <img id="cad_img" />
+                          </div>
+                          <div class="form-field w-100">
+                            <label for=""
+                              >Contact Details
+                              <span style="color: red">*</span></label
+                            >
+                            <textarea
+                              class="w-100"
+                              id="contact_details"
+                              name="contact_details"
+                            ></textarea>
+                          </div>
+                          <div class="form-field w-100">
+                            <label for=""
+                              >Social Media Details
+                              <span style="color: red">*</span></label
+                            >
+                            <textarea
+                              class="w-100"
+                              id="social_media_contact"
+                              name="social_media_contact"
+                            ></textarea>
+                          </div>
+                          <div class="form-field w-100">
+                            <label for=""
+                              >About Me <span style="color: red">*</span></label
+                            >
+                            <textarea
+                              class="w-100"
+                              id="about_me"
+                              name="about_me"
+                            ></textarea>
+                          </div>
+                          <div class="form-field w-100">
+                            <label for=""
+                              >Any unique strengths or expertise you believe you
+                              have which people should know( Optional )</label
+                            >
+                            <textarea
+                              class="w-100"
+                              id="unique_strg"
+                              name="unique_strg"
+                            ></textarea>
+                          </div>
+
+                          <div class="form-field w-100">
+                            <label for=""
+                              >Why are you running for election ?</label
+                            >
+                            <textarea
+                              class="w-100"
+                              id="why_running"
+                              name="why_running"
+                            ></textarea>
+                          </div>
+
+                          <div class="form-field w-100">
+                            <label for=""
+                              >Issues my local constituency is facing and
+                              solution I can provide</label
+                            >
+                            <textarea
+                              class="w-100"
+                              id="issues_facing"
+                              name="issues_facing"
+                            ></textarea>
+                          </div>
+                          <div class="form-field w-100">
+                            <label for=""
+                              >Why should local people vote me?</label
+                            >
+                            <textarea
+                              class="w-100"
+                              id="why_vote"
+                              name="why_vote"
+                            ></textarea>
+                          </div>
+
+                          <div class="form-field w-100">
+                            <label for="">My priorities?</label>
+                            <textarea
+                              class="w-100"
+                              id="cand_priority"
+                              name="cand_priority"
+                            ></textarea>
+                          </div>
+
+                          <div class="form-field w-100">
+                            <label for=""
+                              >Press release- link to your press release</label
+                            >
+                            <textarea
+                              class="w-100"
+                              id="cand_presslink"
+                              name="cand_presslink"
+                            ></textarea>
+                          </div>
+
+                          <!-- <div class="flex w-100 m-0 justify-content-between align-items-center">
+                                                        <div class="form-field">
+                                                            <input class="" type="checkbox" />
+                                                            <label for="">Remember</label>
+                                                        </div>
+                                                        <p>Back to Login</p>
+                                                    </div> -->
+                          <button
+                            type="button"
+                            class="btn globalBtn px-2 py-2 w-100 font-weight-bold"
+                            onclick="condidateCreate();"
+                          >
+                            Registration
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- section ends -->
+
+        <!-- logos section -->
+        <div class="footer">
+          <div class="button">
+            <a href="#">© 2023 NZ Policy</a>
+            <button><i class="fa-solid fa-heart"></i>Donate</button>
+          </div>
+        </div>
+        <!-- footer ends -->
+
+        <!-- Bootstrap Script -->
+        <script src="{% static 'websiteApp/assets/js/bootstrap_js.js' %}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      </div>
+    </div>
+  </body>
 </html>
 
 {% include 'websiteApp/jQuery/registration-jquery.html' %}
